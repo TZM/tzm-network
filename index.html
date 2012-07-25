@@ -33,33 +33,35 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
-
-<div><a href="http://tzm.github.com/Z-Tabzilla" id="tabzilla"></a></div>
-
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        <h3>Welcome to Z-Tabzilla.</h3>
+		<div><a href="http://tzm.github.com/Z-Tabzilla" id="tabzilla"></a></div>
+		<p>A solution that would take the burden off chapter administrators to update manually chapter links. There is so many sites that TZM has created within its network, and its hard for individual members to keep track of them all. And you will get surprised of how many TZM projects are out there that are not well heard of even by coordinators. Z-Tabzilla takes care of all the haste of including project and chapter sites, and provides a neat and tidy space for that information that will look cool with any chapter site. On top of it all, there is no need to find space on your chapter site, and there is very little coding involved to get all this up and running.</p>
+		<p>Z-tabzilla will allow chapter administrators who have just basic HTML knowledge to install a cool widget that will scroll down from the top of your chapter website, that includes all the chapter links and global projects. The beauty of this system is that it does not have to be updated by each individual chapter administrator whenever a new chapter is established or a new project is out there. Changes are automatically updated once Z-Tabzilla is installed as they are fetched from a singe location.</p>
+		<h3>Installation</h3>
+		<p>Step 1 Between your <head> tags insert the following code:</p>
+			<pre><code>
+				<link rel="stylesheet" type="text/css" media="all" href="https://raw.github.com/TZM/Z-Tabzilla/master/z-tabzilla-min.css" />
+				<script type="text/javascript" src="https://raw.github.com/TZM/Z-Tabzilla/master/z-tabzilla-min.js"></script>
+			</code></pre>
+		<p>Step 2 Insert this code wherever you want your Z-tabzilla button to appear:
+			<pre><code>
+				<a href="YOURSITEURL" id="tabzilla"></a>
+			</code></pre>
+		<p>Where YOURSITEURL is the URL of your site</p>
+		<p>Thats it!</p>
+		<h3>FAQ</h3>
+		<p>For FAQ and troubleshooting please post to this forum topic with your question. Be specific about your problem/question!</p>
+		<h3>Things to do and Development</h3>
+		<p>Participation in this project is welcome! At the moment I'm doing this alone, and i would welcome more developers to tune up the code.</p>
+		<h3>Minify css and js</h3>
+		<ul>
+			<li>
+				<pre><code>
+					cleancss -o z-tabzilla-min.css z-tabzilla.css
+					uglifyjs -o z-tabzilla-min.js z-tabzilla.js
+				</code></pre>
+			</li>
+		</ul>
       </section>
     </div>
 
