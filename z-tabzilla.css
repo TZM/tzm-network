@@ -3,8 +3,6 @@
 ***************************************************************/    
 
 #tabzillacontainer	{
-	
-	height: ;
 	width: 100%;
 	float: left;
 }
@@ -231,26 +229,27 @@
 ********************* Chapter flag Styles **********************
 ***************************************************************/    
 
-.chapters_table {
+#chapters_table {
 	width: 48%;
 	float: left;
 		}
 .c_COL1, .c_COL2, .c_COL3, .c_COL4 {
-    	width: 25%;
-	height: 11px;
+    width: 25%;
+	height: 200px;
+	float: left;
 }
 
-.c_COL1, .c_COL1 div	{text-align: left; widht: 80px;vertical-align: top; color: ; margin: 1px; margin-bottom: 3px; }
+.c_COL1 div, .c_COL2 div, .c_COL3 div, .c_COL4 div	{
+	text-align: left;
+	vertical-align: top; 
+	margin-bottom: 2px;
+	margin-top: 1px;
+	}
 
-.c_COL2, .c_COL2 div	{text-align: left;}
-
-.c_COL3, .c_COL3 div {text-align: left;}
-
-.c_COL4, .c_COL4 div	{text-align: left;}
-
-.chapters_table h1	{
+#chapters_table h1	{
 	font-size: 20px;
 	font-weight: bold;
+	color: #484848;
 }
 /*** chapter images ***/
 
@@ -258,8 +257,9 @@
 	height: 10px;
    	color:#000000;
     font-size: 11px;
-	font-family: 'Ubuntu Condensed', sans-serif;
+	font-family: 'Arial', sans-serif;
 	line-height: 11px;
+	display:table-row-group;
 }
 
 .chapters_link:hover, .chapters:hover {
@@ -311,6 +311,9 @@
 .c_chile	{background-position: 0px -484px;}
 .c_chile:hover	{background-position: -16px -484px;}
 
+.c_china	{background-position: 0px -506px;}
+.c_china:hover	{background-position: -16px -506px;}
+
 .c_colombia	{background-position: 0px -518px;}
 .c_colombia:hover	{background-position: -16px -518px;}
 
@@ -338,11 +341,14 @@
 .c_france	{background-position: 0px -836px;}
 .c_france:hover	{background-position: -16px -836px;}
 
-.c_gernamy	{background-position: 0px -208px;}
-.c_gernamy:hover	{background-position: -16px -208px;}
+.c_gernamy	{background-position: 0px -605px;}
+.c_gernamy:hover	{background-position: -16px -605px;}
 
 .c_greece	{background-position: 0px -979px;}
 .c_greece:hover	{background-position: -16px -979px;}
+
+.c_guatemala	{background-position: 0px -1001px;}
+.c_guatemala:hover	{background-position: -16px -1001px;}
 
 .c_hungary	{background-position: 0px -1100px;}
 .c_hungary:hover	{background-position: -16px -1100px;}
@@ -356,8 +362,11 @@
 .c_israel	{background-position: 0px -1133px;}
 .c_israel:hover	{background-position: -16px -1133px;}
 
-.c_italy	{background-position: 0px -1122px;}
-.c_italy:hover	{background-position: -16px -1122px;}
+.c_italy	{background-position: 0px -1199px;}
+.c_italy:hover	{background-position: -16px -1199px;}
+
+.c_kazakhstan	{background-position: 0px -1353px;}
+.c_kazakhstan:hover	{background-position: -16px -1353px;}
 
 .c_japan	{background-position: 0px -1232px;}
 .c_japan:hover	{background-position: -16px -1232px;}
@@ -367,6 +376,9 @@
 
 .c_macedonia	{background-position: 0px -1552px;}
 .c_macedonia:hover	{background-position: -16px -1552px;}
+
+.c_malaysia	{background-position: 0px -1706px;}
+.c_malaysia:hover	{background-position: -16px -1706px;}
 
 .c_mexico	{background-position: 0px -1695px;}
 .c_mexico:hover	{background-position: -16px -1695px;}
@@ -380,6 +392,9 @@
 .c_newzealand	{background-position: 0px -1849px;}
 .c_newzealand:hover	{background-position: -16px -1849px;}
 
+.c_nicaragua	{background-position: 0px -1783px;}
+.c_nicaragua:hover	{background-position: -16px -1783px;}
+
 .c_norway	{background-position: 0px -1805px;}
 .c_norway:hover	{background-position: -16px -1805px;}
 
@@ -391,6 +406,9 @@
 
 .c_poland	{background-position: 0px -1937px;}
 .c_poland:hover	{background-position: -16px -1937px;}
+
+.c_philippines	{background-position: 0px -1915px;}
+.c_philippines:hover	{background-position: -16px -1915px;}
 
 .c_portugal	{background-position: 0px -1992px;}
 .c_portugal:hover	{background-position: -16px -1992px;}
@@ -424,6 +442,9 @@
 
 .c_switzerland	{background-position: 0px -451px;}
 .c_switzerland:hover	{background-position: -16px -451px;}
+
+.c_thailand	{background-position: 0px -528px;}
+.c_thailand:hover	{background-position: -16px -528px;}
 
 .c_turkey	{background-position: 0px -0px;}
 .c_turkey:hover	{background-position: -16px -0px;}
