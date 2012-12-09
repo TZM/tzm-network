@@ -47,7 +47,6 @@
 /* Tab panel */
 
 #tabzilla-panel {
-    height: 0;
     background: none repeat scroll 0 0 #FFFFFF;
     font-family: 'Ubuntu Condensed', sans-serif;;
     font-style: normal;
@@ -61,13 +60,19 @@
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    overflow: hidden;
+
     direction: ltr;
+}
+
+#tabzilla-panel.tabzilla-closed {
+    height: 0;    
+    overflow: hidden;
 }
 
 #tabzilla-panel.tabzilla-opened {
     height: 260px;
-	width: 100%;
+	   width: 100%;
+	   overflow-y:auto;
 }
 
 #tabzilla-contents {
@@ -75,7 +80,7 @@
     margin: 0 auto;
     text-align: left;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 50%;
     margin-left: -486px;
     right: 0;
@@ -154,7 +159,7 @@
     width: 248px;
     height: auto;
     background: none;
-    line-height: 6px;
+    line-height: 0.4;
 }
 
 #tabzilla-panel #tabzilla-nav ul li ul li {
@@ -174,6 +179,7 @@
     outline: 0;
 	font-weight: normal;
 	font-size: 13px;
+	line-height: 1.1em
 }
 
 #tabzilla-panel #tabzilla-nav a:hover,
