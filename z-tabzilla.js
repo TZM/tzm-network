@@ -85,7 +85,7 @@ function Tabzilla()
 Tabzilla.READY_POLL_INTERVAL = 40;
 Tabzilla.readyInterval = null;
 Tabzilla.jQueryCDNSrc =
-    '/javascripts/jquery.min.js';
+    '//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js';
 
 Tabzilla.hasCSSTransitions = (function() {
     var div = document.createElement('div');
