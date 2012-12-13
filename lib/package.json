@@ -1,0 +1,12 @@
+{
+    "author": "Norman Khine <norman@zmgc.net>",
+    "name": "tzm-chapters-list",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "node-github": ">=0.0.3"
+    }
+}
