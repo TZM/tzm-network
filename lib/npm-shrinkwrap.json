@@ -1,0 +1,9 @@
+{
+  "name": "tzm-chapters-list",
+  "version": "0.0.1",
+  "dependencies": {
+    "node-github": {
+      "version": "0.0.3"
+    }
+  }
+}
