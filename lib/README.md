@@ -27,3 +27,7 @@ Open your browser and point it to [http://localhost:9080/](http://localhost:9080
     [APIs Explorer](https://developers.google.com/apis-explorer/#p/drive/v2/drive.files.get?fileId=1epTUiUlv5NQK5x4sgdy1K47ACDTpHH60hbng1qw&_h=2&)
     
 2. Use node-github to upload the chapters.json file to the gh-pages repository, if the original Fusion Table has been updated.
+
+#References
+
+https://developers.google.com/fusiontables/docs/samples/basic_jsonp_request

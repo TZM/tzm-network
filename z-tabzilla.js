@@ -71,7 +71,7 @@
  * @license   http://www.mozilla.org/MPL/MPL-1.1.html Mozilla Public License 1.1
  * @author    Michael Gauthier <mike@silverorange.com>
  * @author    Steven Garrity <steven@silverorange.com>
- */
+*/
 
 function Tabzilla()
 {
@@ -114,7 +114,7 @@ Tabzilla.hasCSSTransitions = (function() {
  * Adapted from the YUI Event component. Defined in Tabzilla so we do not
  * depend on YUI or jQuery. The YUI DOMReady implementation is based on work
  * Dean Edwards, John Resig, Matthias Miller and Diego Perini.
- */
+*/
 Tabzilla.run = function()
 {
     var webkit = 0, isIE = false, ua = navigator.userAgent;
@@ -276,87 +276,6 @@ function sortByKey(key){
   }
 };
 
-Tabzilla.fillZGContacts = function(){
-   if (!Tabzilla.panel.id) return;
-   $.ajax({
-       url: 'zgcontacts.json',
-      success: function(d){   // "Type","Name","Link","Contact","Location","Icon"
-        Tabzilla.zgContacts = d;
-        var countries = [];
-        d.rows.forEach(function(row){
-          if (row[0] == 'Country') countries.push(
-            {link:row[2], contact:row[3], country: row[4]}
-          );     
-        });
-        
-        //alphabetically
-        countries.sort(sortByKey('country'));
-        
-        //adding link 
-        countryTemplate = function (country){
-          s = '<a title="'+country.country+'" class="chapters_link" href="'
-          +country.link+'" target="_blank">'
-      +'<div class="chapters c_'+country.country.toLowerCase()+'">'
-        +'<span class="flag-margin">'+country.country+'</span></div></a>' 
-        return s;
-        }
-        
-       
-        var byletter = {};
-        
-        //count countries starting from each letter
-        countries.forEach(function(c){        
-          var firstletter = c.country.toLowerCase().charAt(0);
-          if (byletter[firstletter]) byletter[firstletter]++;
-          else byletter[firstletter]=1;
-        });
-        console.log(byletter);
-        //prepare containers
-        var panel = $("#"+Tabzilla.panel.id);
-        var $cols = []; 
-        
-        $cols.push(panel.find(".c_COL4"));
-        $cols.push(panel.find(".c_COL3"));
-        $cols.push(panel.find(".c_COL2"));
-        $cols.push(panel.find(".c_COL1"));
-        var columns = $cols.length;        
-        var targetlen = countries.length/columns;
-                
-        var FirstLetter = countries[0].country.toLowerCase().charAt(0);
-        var cc = [];
-        
-        //fill containers. this loop is buggy. should be reviewed.
-        countries.forEach(function(c){
-          var newFirstLetter = c.country.toLowerCase().charAt(0);
-          if (FirstLetter != newFirstLetter)
-          {
-             
-             var l1 = cc.length;
-             var l2 = l1 + byletter[newFirstLetter];
-             //condition maybe shd be changed..
-             
-             if (Math.abs(l2-targetlen) >= Math.abs(l1-targetlen)){
-               var $col;
-               if ($cols.length>0) $col = $cols.pop();
-               cc.forEach(function(c){
-                 $col.append(countryTemplate(c));
-               });
-               cc=[];
-               
-               //does not work :(
-               //could generate another template with first letter raised
-               $col.find('span').first().addClass("first-letter");
-             }
-             cc.push(c);
-          }
-          else cc.push(c);
-          FirstLetter = newFirstLetter;
-        });
-        
-      },
-   });
-}
-
 Tabzilla.addEventListener = function(el, ev, handler)
 {
     if (typeof el.attachEvent != 'undefined') {
@@ -430,6 +349,89 @@ Tabzilla.preventDefault = function(ev)
         ev.returnValue = false;
     }
 };
+
+Tabzilla.fillZGContacts = function(){
+   if (!Tabzilla.panel.id) return;
+   $.ajax({
+       url: 'http://chapters.zmgc.net',
+       dataType: 'json',
+      success: function(d){   // "Type","Name","Link","Contact","Location","Icon"
+        Tabzilla.zgContacts = d;
+        var countries = [];
+        d.rows.forEach(function(row){
+          if (row[0] == 'Country') countries.push(
+            {link:row[2], contact:row[3], country: row[4]}
+          );  
+          if (row[0] == 'Region')
+             console.log(row);
+        });
+
+        //alphabetically
+        countries.sort(sortByKey('country'));
+        //adding link 
+        countryTemplate = function (country){
+          s = '<a title="'+country.country+'" class="chapters_link" href="'
+          +country.link+'" target="_blank">'
+      +'<div class="chapters c_'+country.country.toLowerCase()+'">'
+        +'<span class="flag-margin">'+country.country+'</span></div></a>' 
+        return s;
+        }
+        
+       
+        var byletter = {};
+        
+        //count countries starting from each letter
+        countries.forEach(function(c){        
+          var firstletter = c.country.toLowerCase().charAt(0);
+          if (byletter[firstletter]) byletter[firstletter]++;
+          else byletter[firstletter]=1;
+        });
+        console.log(byletter);
+        //prepare containers
+        var panel = $("#"+Tabzilla.panel.id);
+        var $cols = []; 
+        
+        $cols.push(panel.find(".c_COL4"));
+        $cols.push(panel.find(".c_COL3"));
+        $cols.push(panel.find(".c_COL2"));
+        $cols.push(panel.find(".c_COL1"));
+        var columns = $cols.length;        
+        var targetlen = countries.length/columns;
+                
+        var FirstLetter = countries[0].country.toLowerCase().charAt(0);
+        var cc = [];
+        
+        //fill containers. this loop is buggy. should be reviewed.
+        countries.forEach(function(c){
+          var newFirstLetter = c.country.toLowerCase().charAt(0);
+          if (FirstLetter != newFirstLetter)
+          {
+             
+             var l1 = cc.length;
+             var l2 = l1 + byletter[newFirstLetter];
+             //condition maybe shd be changed..
+             
+             if (Math.abs(l2-targetlen) >= Math.abs(l1-targetlen)){
+               var $col;
+               if ($cols.length>0) $col = $cols.pop();
+               cc.forEach(function(c){
+                 $col.append(countryTemplate(c));
+               });
+               cc=[];
+               
+               //does not work :(
+               //could generate another template with first letter raised
+               $col.find('span').first().addClass("first-letter");
+             }
+             cc.push(c);
+          }
+          else cc.push(c);
+          FirstLetter = newFirstLetter;
+        });
+        
+      },
+   });
+}
 
 Tabzilla.content =
     '<div id="tabzilla-contents">  <!--- INTERNATONAL CHAPTERS TABLE starts here --->' 
