@@ -10,7 +10,7 @@
 #tabzilla {
     float: left;
     display: block;
-    background: url("/images/tabzilla_zeitgeisted.png") repeat scroll 0 0 transparent;
+    background: url("../images/tabzilla_zeitgeisted.png") repeat scroll 0 0 transparent;
     height: 45px;
     width: 150px;
     position: relative;
@@ -275,7 +275,7 @@ padding: 0 30px 0 0;
 		}
 
 .chapters	{
-    background: url("/images/flags.gif") no-repeat scroll 0 0 padding-box transparent;
+    background: url("../images/flags.gif") no-repeat scroll 0 0 padding-box transparent;
     float: left;
     height: 11px;
     margin-right: 5px;
