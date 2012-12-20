@@ -31,3 +31,33 @@ Open your browser and point it to [http://localhost:9080/](http://localhost:9080
 #References
 
 https://developers.google.com/fusiontables/docs/samples/basic_jsonp_request
+
+#Programme flow
+
+[http://www.asciiflow.com/#7069919989500050946/1937278766](http://www.asciiflow.com/#7069919989500050946/1937278766)
+
++---------------------+               +----------------------+            +----------------------+
+|CHECK IF EXISTS      |     YES       |IS IT MODIFIED?       |    NO      |CREATE WIDGET         |
+|---------------------+--------------->----------------------+------------>----------------------|
+|'data/chepaters.json'|               |Use Google Drive API  |            |z-tabzilla.js to use  |
+|does it exist on fs? |               |to check modifiedDate |            |chapters.json as AJAX |
++---------+-----------+               +---------+------------+            +----------------------+
+          |                                     |
+          |                                     |
+          |NO                                   |YES
+          |                                     |
++---------v-----------+                         |
+|PULL DATA FROM GFT   |                         |
+|---------------------<-------------------------+
+|create or update the |
+|chapters.json file   |                                                   +
++---------+-----------+
+          |
+          |UPLOAD
+          |
++---------v-----------+
+|PUSH DATA TO GITHUB  |
+|---------------------|
+|upload chapters.json |
+|using the github API |
++---------------------+
