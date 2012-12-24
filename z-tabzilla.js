@@ -355,6 +355,8 @@ Tabzilla.fillZGContacts = function(){
    $.ajax({
        url: 'http://chapters.zmgc.net',
        dataType: 'json',
+       cache: true,
+       ifModified: true,
       success: function(d){   // "Type","Name","Link","Contact","Location","Icon"
         Tabzilla.zgContacts = d;
         var countries = [];
