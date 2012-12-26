@@ -1,0 +1,44 @@
+{
+ "kind": "drive#file",
+ "id": "1epTUiUlv5NQK5x4sgdy1K47ACDTpHH60hbng1qw",
+ "etag": "\"B6kWtzuiQYCrVi2MWyRaub0CRyo/MTM1NTg2MTkyNzg5OA\"",
+ "selfLink": "https://www.googleapis.com/drive/v2/files/1epTUiUlv5NQK5x4sgdy1K47ACDTpHH60hbng1qw",
+ "alternateLink": "https://www.google.com/fusiontables/DataSource?docid=1epTUiUlv5NQK5x4sgdy1K47ACDTpHH60hbng1qw",
+ "iconLink": "https://ssl.gstatic.com/docs/doclist/images/icon_11_fusion_list.png",
+ "title": "TZM Chapters Map",
+ "mimeType": "application/vnd.google-apps.fusiontable",
+ "description": "",
+ "labels": {
+  "starred": false,
+  "hidden": false,
+  "trashed": false,
+  "restricted": false,
+  "viewed": false
+ },
+ "createdDate": "2012-02-23T18:48:46.567Z",
+ "modifiedDate": "2012-12-18T20:18:47.898Z",
+ "parents": [
+  {
+   "kind": "drive#parentReference",
+   "id": "0BxmWh5Lu1DZjNjcyOTBjMGItODE2Mi00MmJiLWFiNTYtMGNiZmQ2ODgwMGE0",
+   "selfLink": "https://www.googleapis.com/drive/v2/files/1epTUiUlv5NQK5x4sgdy1K47ACDTpHH60hbng1qw/parents/0BxmWh5Lu1DZjNjcyOTBjMGItODE2Mi00MmJiLWFiNTYtMGNiZmQ2ODgwMGE0",
+   "parentLink": "https://www.googleapis.com/drive/v2/files/0BxmWh5Lu1DZjNjcyOTBjMGItODE2Mi00MmJiLWFiNTYtMGNiZmQ2ODgwMGE0",
+   "isRoot": false
+  }
+ ],
+ "userPermission": {
+  "kind": "drive#permission",
+  "etag": "\"B6kWtzuiQYCrVi2MWyRaub0CRyo/6sa49sVzqEiMC0vgtIQYApbqt9M\"",
+  "id": "me",
+  "selfLink": "https://www.googleapis.com/drive/v2/files/1epTUiUlv5NQK5x4sgdy1K47ACDTpHH60hbng1qw/permissions/me",
+  "role": "reader",
+  "type": "user"
+ },
+ "quotaBytesUsed": "0",
+ "ownerNames": [
+  "Darr.tzm0"
+ ],
+ "lastModifyingUserName": "Darr.tzm0",
+ "editable": false,
+ "writersCanShare": false
+}
