@@ -1,11 +1,20 @@
 {
-    "author": "Norman Khine <norman@zmgc.net>",
-    "name": "tzm-chapters-list",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node app"
-    },
-    "dependencies": {
+    "author": "Norman Khine <norman@zmgc.net>"
+    ,"name": "tzm-chapters-list"
+    ,"version": "0.0.1"
+    ,"private": true
+    ,"author": "Norman Khine <norman@zmgc.net> (http://zmgc.net/)"
+    ,"contributors": [
+       "Norman Khine <norman@zmgc.net> (http://zmgc.net/)"
+       ,"Aлексей Фрумин <alexey.frumin@gmail.com>"
+       ]
+    ,"keywords": [ ]
+    ,"homepage": "https://github.com/TZM/Z-Tabzilla"
+    ,"scripts": {
+       "start": "node app"
+       }
+    ,"dependencies": {
+        "kat": ">=0.1.2"
+        ,"github": ">=0.1.7"
     }
 }
