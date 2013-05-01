@@ -357,7 +357,8 @@ Tabzilla.fillZGContacts = function(){
        dataType: 'json',
        cache: true,
        ifModified: true,
-      success: function(d){   // "Type","Name","Link","Contact","Location","Icon"
+      success: function(d,textStatus,jqXHR){   // "Type","Name","Link","Contact","Location","Icon"
+        console.debug(jqXHR.status+':'+textStatus);
         Tabzilla.zgContacts = d;
         var countries = [];
         d.rows.forEach(function(row){
