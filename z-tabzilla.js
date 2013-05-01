@@ -8,7 +8,7 @@
  * Event handling portions adapted from the YUI Event component used under
  * the following license:
  *
- *   Copyright © 2012 Yahoo! Inc. All rights reserved.
+ *   Copyright ï¿½ 2012 Yahoo! Inc. All rights reserved.
  *
  *   Redistribution and use of this software in source and binary forms,
  *   with or without modification, are permitted provided that the following conditions
@@ -352,7 +352,7 @@ Tabzilla.preventDefault = function(ev)
 
 Tabzilla.fillZGContacts = function(){
    if (!Tabzilla.panel.id) return;
-   $.ajax({
+   jQuery.ajax({
        url: 'http://chapters.zmgc.net',
        dataType: 'json',
        cache: true,
@@ -391,7 +391,7 @@ Tabzilla.fillZGContacts = function(){
         });
         console.log(byletter);
         //prepare containers
-        var panel = $("#"+Tabzilla.panel.id);
+        var panel = jQuery("#"+Tabzilla.panel.id);
         var $cols = []; 
         
         $cols.push(panel.find(".c_COL4"));
