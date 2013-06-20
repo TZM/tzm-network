@@ -6,8 +6,8 @@ Z-tabzilla will allow chapter administrators who have just basic HTML knowledge 
 
 Step 1 Between your <head> tags insert the following code:
 
-	<link rel="stylesheet" type="text/css" media="all" href="https://raw.github.com/TZM/Z-Tabzilla/master/z-tabzilla-min.css" />
-	<script type="text/javascript" src="https://raw.github.com/TZM/Z-Tabzilla/master/z-tabzilla-min.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="https://raw.github.com/TZM/tzm-network/master/z-tabzilla-min.css" />
+	<script type="text/javascript" src="https://raw.github.com/TZM/tzm-network/master/z-tabzilla-min.js"></script>
 
 Step 2 Insert this code wherever you want your Z-tabzilla button to appear:
 
