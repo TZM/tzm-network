@@ -353,30 +353,30 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.fillZGContacts = function(){
    if (!Tabzilla.panel.id) return;
    jQuery.ajax({
-       url: 'http://chapters.zmgc.net',
+       url: 'http://serene-depths-3284.herokuapp.com/chapters',
        dataType: 'json',
        cache: true,
        ifModified: true,
       success: function(d,textStatus,jqXHR){   // "Type","Name","Link","Contact","Location","Icon"
         console.debug(jqXHR.status+':'+textStatus);
-        Tabzilla.zgContacts = d;
+        Tabzilla.zgContacts = d.tzmNetwork;
         var countries = [];
-        d.rows.forEach(function(row){
-          if (row[0] == 'Country') countries.push(
-            {link:row[2], contact:row[3], country: row[4]}
-          );  
-          if (row[0] == 'Region')
-             console.log(row);
+        Tabzilla.zgContacts.forEach(function(row){
+          countries.push(
+            {link:row.link, contact:row.contact, country: row.country, flag:row.flag}
+            );
         });
 
         //alphabetically
         countries.sort(sortByKey('country'));
+        console.log(countries)
         //adding link 
-        countryTemplate = function (country){
-          s = '<a title="'+country.country+'" class="chapters_link" href="'
-          +country.link+'" target="_blank">'
-      +'<div class="chapters c_'+country.country.toLowerCase()+'">'
-        +'<span class="flag-margin">'+country.country+'</span></div></a>' 
+        countryTemplate = function (x){
+          console.log(x);
+          s = '<a title="'+x.country+'" class="chapters_link" href="'
+          +x.link+'" target="_blank">'+'<div class="chapters '+x.flag+'">'
+          +'<span class="flag-margin">'+x.country+'</span></div></a>'
+          //console.log(s);
         return s;
         }
         
