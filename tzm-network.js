@@ -351,21 +351,26 @@ Tabzilla.preventDefault = function(ev)
 };
 
 Tabzilla.fillZGContacts = function(){
-   if (!Tabzilla.panel.id) return;
-   jQuery.ajax({
-       url: 'http://serene-depths-3284.herokuapp.com/chapters',
-       dataType: 'json',
-       cache: true,
-       ifModified: true,
-      success: function(d,textStatus,jqXHR){   // "Type","Name","Link","Contact","Location","Icon"
-        console.debug(jqXHR.status+':'+textStatus);
-        Tabzilla.zgContacts = d.tzmNetwork;
-        var countries = [];
-        Tabzilla.zgContacts.forEach(function(row){
-          countries.push(
-            {link:row.link, contact:row.contact, country: row.country, flag:row.flag}
+    var baseUrl = 'http://serene-depths-3284.herokuapp.com/chapters';
+
+    if(/^http\:\/\/chapters.aqoon.local/.test(window.location.href)){
+      baseUrl = 'http://localhost:3000/chapters'; // for running/testing locally
+    }
+    if (!Tabzilla.panel.id) return;
+    jQuery.ajax({
+        url: baseUrl,
+        dataType: 'json',
+        cache: true,
+        ifModified: true,
+        success: function(d,textStatus,jqXHR){   // "Type","Name","Link","Contact","Location","Icon"
+          console.debug(jqXHR.status+':'+textStatus);
+          Tabzilla.zgContacts = d.tzmNetwork;
+          var countries = [];
+          Tabzilla.zgContacts.forEach(function(row){
+            countries.push(
+              {link:row.link, contact:row.contact, country: row.country, flag:row.flag}
             );
-        });
+          });
 
         //alphabetically
         countries.sort(sortByKey('country'));
