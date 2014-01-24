@@ -352,10 +352,10 @@ Tabzilla.preventDefault = function(ev)
 
 Tabzilla.fillZGContacts = function(){
     var baseUrl = 'http://serene-depths-3284.herokuapp.com/chapters';
-
-    if(/^http\:\/\/chapters.aqoon.local/.test(window.location.href)){
-      baseUrl = 'http://localhost:3000/chapters'; // for running/testing locally
+    if(/^http\:\/\/chapters.tzm/.test(window.location.href)){
+      baseUrl = 'http://zmgc-blade.aqoon.local/chapters'; // for running/testing locally
     }
+    console.log(baseUrl);
     if (!Tabzilla.panel.id) return;
     jQuery.ajax({
         url: baseUrl,
@@ -374,22 +374,25 @@ Tabzilla.fillZGContacts = function(){
 
         //alphabetically
         countries.sort(sortByKey('country'));
-        console.log(countries)
+        console.log(countries);
+        console.log('=======');
         //adding link 
         countryTemplate = function (x){
           console.log(x);
+          console.log('xxxxxxxx');
           s = '<a title="'+x.country+'" class="chapters_link" href="'
           +x.link+'" target="_blank">'+'<div class="chapters '+x.flag+'">'
           +'<span class="flag-margin">'+x.country+'</span></div></a>'
           //console.log(s);
         return s;
         }
-        
-       
+
         var byletter = {};
         
         //count countries starting from each letter
-        countries.forEach(function(c){        
+        countries.forEach(function(c){
+          console.log(c);
+          console.log('country');        
           var firstletter = c.country.toLowerCase().charAt(0);
           if (byletter[firstletter]) byletter[firstletter]++;
           else byletter[firstletter]=1;
