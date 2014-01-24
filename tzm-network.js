@@ -353,7 +353,7 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.fillZGContacts = function(){
     var baseUrl = 'http://serene-depths-3284.herokuapp.com/chapters';
     if(/^http\:\/\/chapters.tzm/.test(window.location.href)){
-      baseUrl = 'http://zmgc-blade.aqoon.local/chapters'; // for running/testing locally
+      baseUrl = 'http://localhost:3000/chapters'; // for running/testing locally
     }
     console.log(baseUrl);
     if (!Tabzilla.panel.id) return;
@@ -415,6 +415,7 @@ Tabzilla.fillZGContacts = function(){
         //fill containers. this loop is buggy. should be reviewed.
         countries.forEach(function(c){
           var newFirstLetter = c.country.toLowerCase().charAt(0);
+
           if (FirstLetter != newFirstLetter)
           {
              
