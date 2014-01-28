@@ -373,31 +373,15 @@ Tabzilla.fillZGContacts = function(){
           });
 
         //alphabetically
-        countries.sort(sortByKey('country'));
-        console.log(countries);
-        console.log('=======');
         //adding link 
         countryTemplate = function (x){
-          console.log(x);
-          console.log('xxxxxxxx');
           s = '<a title="'+x.country+'" class="chapters_link" href="'
           +x.link+'" target="_blank">'+'<div class="chapters '+x.flag+'">'
           +'<span class="flag-margin">'+x.country+'</span></div></a>'
           //console.log(s);
         return s;
         }
-
-        var byletter = {};
         
-        //count countries starting from each letter
-        countries.forEach(function(c){
-          console.log(c);
-          console.log('country');        
-          var firstletter = c.country.toLowerCase().charAt(0);
-          if (byletter[firstletter]) byletter[firstletter]++;
-          else byletter[firstletter]=1;
-        });
-        console.log(byletter);
         //prepare containers
         var panel = jQuery("#"+Tabzilla.panel.id);
         var $cols = []; 
@@ -407,38 +391,21 @@ Tabzilla.fillZGContacts = function(){
         $cols.push(panel.find(".c_COL2"));
         $cols.push(panel.find(".c_COL1"));
         var columns = $cols.length;        
-        var targetlen = countries.length/columns;
-                
-        var FirstLetter = countries[0].country.toLowerCase().charAt(0);
-        var cc = [];
+        var targetlen = Math.ceil( countries.length/columns );
+        console.log ("!"+countries.length);
+        console.log (columns);
+        console.log (targetlen);
+        console.log ($cols);
         
+        var i=0;
+        var $col = $cols.pop();
         //fill containers. this loop is buggy. should be reviewed.
         countries.forEach(function(c){
-          var newFirstLetter = c.country.toLowerCase().charAt(0);
-
-          if (FirstLetter != newFirstLetter)
-          {
-             
-             var l1 = cc.length;
-             var l2 = l1 + byletter[newFirstLetter];
-             //condition maybe shd be changed..
-             
-             if (Math.abs(l2-targetlen) >= Math.abs(l1-targetlen)){
-               var $col;
-               if ($cols.length>0) $col = $cols.pop();
-               cc.forEach(function(c){
-                 $col.append(countryTemplate(c));
-               });
-               cc=[];
-               
-               //does not work :(
-               //could generate another template with first letter raised
-               $col.find('span').first().addClass("first-letter");
-             }
-             cc.push(c);
-          }
-          else cc.push(c);
-          FirstLetter = newFirstLetter;
+         $col.append(countryTemplate(c));
+         if ( ++i >= targetlen){
+           $col = $cols.pop();
+           i=0;
+         }
         });
         
       },
